@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito+Sans:ital,wght@1,900&display=swap');
+
+html, body {
+    position: relative;
+    overflow: hidden;
+}
+
+body {
+    background: black;
+    color: white;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Lilita One', cursive;
+    display: flex;
+    justify-content: center;;
+    align-items: center;
+    overflow-x: hidden;
+    text-transform: uppercase;
+    text-shadow: 2px 2px purple;
+}
+
+.backgroundContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    transform-origin: top center;
+    position: absolute;
+    top: 0;
+}
+
+.backgroundContainerRow {
+    display: flex;
+    gap: 1em;
+}
+
+.backgroundItem {
+    font-size: 1.5rem;
+    opacity: 0.15;
+    font-style: italic;
+}
+
+.hidden {
+    visibility: hidden;
+    position: absolute;
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100vh;
+    font-family: 'Nunito Sans', sans-serif;
+    padding: 30px;
+    position: relative;
+    top: -100vh;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+}
+
+.wordContainer {
+    font-size: 7vmin;
+    animation: drop 600s;
+    /* border: 1px solid magenta; */
+    width: fit-content;
+    position: relative;
+    padding: 0 4px;
+}
+
+.mask {
+    background: white;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: reveal 600s;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* drop animation */
+main .wordContainer:nth-child(3) {
+    animation-delay: 1s;
+}
+
+main section .wordContainer:nth-child(3) {
+    animation-delay: 2s;
+}
+
+main section .wordContainer:nth-child(2) {
+    animation-delay: 3s;
+}
+
+main section .wordContainer:nth-child(1) {
+    animation-delay: 4s;
+}
+
+main .wordContainer:nth-child(1) {
+    animation-delay: 5s;
+}
+
+/* reveal animation */
+main .wordContainer:nth-child(4) .mask {
+    animation-delay: 17s;
+}
+
+main .wordContainer:nth-child(3) .mask {
+    animation-delay: 15s;
+}
+
+main section .wordContainer:nth-child(3) .mask {
+    animation-delay: 13s;
+}
+
+main section .wordContainer:nth-child(2) .mask {
+    animation-delay: 11s;
+}
+
+main section .wordContainer:nth-child(1) .mask {
+    animation-delay: 9s;
+}
+
+main .wordContainer:nth-child(1) .mask {
+    animation-delay: 7s;
+}
+
+@keyframes drop {
+    0.33%, 100% {
+        transform: translateY(100vh);
+    }
+}
+
+@keyframes reveal {
+    0.33%, 100% {
+        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    }
+}
